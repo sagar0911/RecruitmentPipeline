@@ -19,8 +19,8 @@ class Job(models.Model):
 class Application(models.Model):
     status_choices = (("PENDING","PENDING"),("REVIEWING","REVIEWING"), ("SHORTLISTED","SHORTLISTED"),("REJECTED","REJECTED"),("INTERVIEWING","INTERVIEWING"),("ADVANCE INTERVIEW","ADVANCE INTERVIEW"),
     ("OFFERED","OFFERED"), ("HIRED","HIRED"))
-    applicant = models.ForeignKey(Applicant, on_delete=models.CASCADE)
-    job  = models.ForeignKey(Job, on_delete=models.CASCADE) 
+    applicant_id = models.ForeignKey(Applicant, on_delete=models.CASCADE)
+    job_id = models.ForeignKey(Job, on_delete=models.CASCADE) 
     stage = models.TextField(choices=status_choices, default="PENDING")
 
     class Meta:

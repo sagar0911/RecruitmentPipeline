@@ -1,5 +1,6 @@
 
 from os import stat
+from urllib import response
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.parsers import MultiPartParser , FormParser, JSONParser
@@ -89,8 +90,12 @@ class ApplicationList(APIView):
     """
         serializer = ApplicationSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            if serializer.validated_data['stage'] in ('PENDING' , ''):
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            else:
+                response_dict = {"Failure:":"Stage can either be empty or PENDING only"}
+                return Response(response_dict, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
 
 
