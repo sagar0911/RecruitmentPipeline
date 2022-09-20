@@ -21,10 +21,10 @@ class Application(models.Model):
     ("OFFERED","OFFERED"), ("HIRED","HIRED"))
     applicant_id = models.ForeignKey(Applicant, on_delete=models.CASCADE)
     job_id = models.ForeignKey(Job, on_delete=models.CASCADE) 
-    stage = models.TextField(choices=status_choices, default="PENDING")
+    stage = models.TextField(choices=status_choices, default="PENDING",)
 
     class Meta:
-        unique_together = ('applicant', 'job')
+        unique_together = ('applicant_id', 'job_id')
 
 
 
