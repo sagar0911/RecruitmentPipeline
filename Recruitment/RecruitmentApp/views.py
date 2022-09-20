@@ -131,7 +131,7 @@ class ApplicationDetails(APIView):
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
             else:
-                response_dict = {"Failure":"Cannot change to entered stage, please check again!!"}
+                response_dict = {"Failure":"Cannot change to entered stage, please enter again!! Can only change current status to {}".format(STAGES[current_stage])}
                 return Response(data=response_dict)
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
     
