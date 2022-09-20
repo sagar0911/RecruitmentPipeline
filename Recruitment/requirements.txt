@@ -223,7 +223,6 @@ protobuf==3.20.1
 psaw==0.1.0
 psutil @ file:///opt/concourse/worker/volumes/live/0673cd4b-30c1-4470-7490-d8955610f5d5/volume/psutil_1612298002202/work
 psycopg2==2.9.3
-psycopg2-binary==2.9.3
 ptyprocess @ file:///tmp/build/80754af9/ptyprocess_1609355006118/work/dist/ptyprocess-0.7.0-py2.py3-none-any.whl
 py @ file:///tmp/build/80754af9/py_1607971587848/work
 pyasn1==0.4.8
