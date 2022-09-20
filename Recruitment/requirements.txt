@@ -177,13 +177,10 @@ PyJWT==2.4.0
 pylint==2.7.4
 pyls-black==0.4.6
 pyls-spyder==0.3.2
-pymongo==4.1.1
-pyodbc==4.0.0-unsupported
-pyOpenSSL==20.0.1
-pyparsing==2.4.7
+
+
 pyproj==3.4.0
 pyrsistent==0.17.3
-PySocks==1.7.1
 pytest==6.2.3
 pytho==0.0.1
 python-dateutil==2.8.1
