@@ -17,7 +17,9 @@ action expects data in the JSON format, which is easily readable by humans and m
 
 Models: There are 3 models, namely Job, Applicant and Application. The Job and Applicant models are provided to ensure the creation of job lisitngs and 
 applicant profiles. There is only limited actions avaialble on these models, since this is not the prupose of the applciation. The purpose of the web app
-is to change the status of the Applications, for which all actions have been provided.
+is to change the status of the Applications, for which all actions have been provided. In the Application model, care has been taken to ensure that there
+only unique combinations of applicant_id + job_id are allowed, which means that a particular applicant can only apply for a particular job once. However,
+a particular applicant can apply to multiple jobs at once, and any number of jobs can be assoicated with a particular applicant.
 
 
 Link to deployed version of app: https://recruitment-app-hackertrail.herokuapp.com/
