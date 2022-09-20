@@ -8,7 +8,7 @@ class Applicant(models.Model):
     applicant_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     email = models.EmailField(max_length=100)
-    resume = models.FileField(upload_to='resumes/')
+    resume = models.FileField(upload_to='staticfiles/resumes/')
     
 
 class Job(models.Model):
